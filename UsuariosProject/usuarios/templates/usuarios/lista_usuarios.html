@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Usuarios</title>
+    <!-- Agregar enlaces a Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Estilos personalizados */
+        body {
+            padding-top: 50px;
+            padding-bottom: 20px;
+        }
+        .starter-template {
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">Lista de Usuarios</a>
+    </nav>
+
+    <main role="main" class="container">
+        <div class="starter-template">
+            <h1>Lista de Usuarios</h1>
+            <ul class="list-group">
+                {% for usuario in usuarios %}
+                <li class="list-group-item"><a href="{% url 'detalle_usuario' usuario.id %}">{{ usuario.nombre }}</a></li>
+                {% endfor %}
+            </ul>
+            <a class="btn btn-primary mt-3" href="{% url 'crear_usuario' %}">Crear Usuario</a>
+        </div>
+    </main>
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

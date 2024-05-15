@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% block title %}
+Actualizar Usuario
+{% endblock %}
+
+<hr>
+<h1>Actualizar Usuario</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+</form>
+{% endblock %}

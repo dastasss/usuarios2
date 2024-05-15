@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% block title %}
+Borrar Usuario
+{% endblock %}
+<hr>
+<h1>¿Estás seguro que deseas borrar este usuario?</h1>
+<p><strong>Nombre:</strong> {{ usuario.nombre }}</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Sí, borrar</button>
+</form>
+<hr> <!-- Mueve o elimina esta etiqueta según sea necesario -->
+<a href="{% url 'detalle_usuario' usuario.id %}" class="btn btn-secondary">Cancelar</a>
+{% endblock %}
